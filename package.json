@@ -1,15 +1,15 @@
 {
-<<<<<<< HEAD
+
   "name": "mvbrain",
   "version": "0.3.0",
   "description": "Hexlet brain games project",
   "main": "src/bin/brain-games.js",
-=======
+
   "name": "brainmva",
   "version": "0.3.0",
   "description": "",
   "main": "index.js",
->>>>>>> 97ff45a90efacf6c929d3c17eabc7cbdbc763bf1
+
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
   },
@@ -31,7 +31,6 @@
     "babel-eslint": "^8.2.2",
     "babel-install": "2.1.0",
     "babel-preset-env": "*",
-<<<<<<< HEAD
     "babel-preset-stage-0": "*",
     "eslint": "^4.18.2",
     "eslint-config-airbnb-base": "^12.1.0",
@@ -40,19 +39,4 @@
   "dependencies": {
     "readline-sync": "^1.4.9"
   }
-=======
-    "babel-preset-stage-0": "*"
-  },
-  "dependencies": {
-    "readline-sync": "^1.4.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mvapro/project-lvl1-s236.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mvapro/project-lvl1-s236/issues"
-  },
-  "homepage": "https://github.com/mvapro/project-lvl1-s236#readme"
->>>>>>> 97ff45a90efacf6c929d3c17eabc7cbdbc763bf1
 }
