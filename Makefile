@@ -6,3 +6,6 @@ start:
 
 publish:
 	sudo npm publish
+
+lint:
+	sudo npm run eslint ".js" "/src"
