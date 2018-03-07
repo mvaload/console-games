@@ -1,5 +1,5 @@
 {
-  "name": "brainmva",
+  "name": "mvbrain",
   "version": "0.3.0",
   "description": "",
   "main": "index.js",
@@ -25,13 +25,5 @@
   },
   "dependencies": {
     "readline-sync": "^1.4.9"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mvapro/project-lvl1-s236.git"
-  },
-  "bugs": {
-    "url": "https://github.com/mvapro/project-lvl1-s236/issues"
-  },
-  "homepage": "https://github.com/mvapro/project-lvl1-s236#readme"
+  }
 }
