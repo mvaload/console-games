@@ -1,52 +1,8 @@
-import readlineSync from 'readline-sync';
+import { sayHello, startGame } from './libs';
 
-const playGame = (game) => {
-  const { rule, riddlesWithAnswers } = game;
-
-  const playerGreeting = () => {
-    console.log('Welcome to the Brain Games!\n');
-    console.log(`${rule}\n`);
-    const playerName = readlineSync.question('May I have your name? ');
-    console.log(`Hello, ${playerName}!\n`);
-    return playerName;
-  };
-
-  const respondToCorrectAnswer = (playerAnswer) => {
-    console.log(`Your answer: ${playerAnswer}`);
-    console.log('Correct!\n');
-  };
-
-  const respondToWrongAnswer = (playerAnswer, correctAnswer, playerName) => {
-    console.log(`'${playerAnswer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
-    console.log(`Let's try again, ${playerName}\n`);
-  };
-
-  const getGameResult = (riddlesAndAnswers, playerName) => {
-    let isPlayerWin = true;
-    riddlesAndAnswers.forEach(([riddle, correctAnswer]) => {
-      const playerAnswer = readlineSync.question(`Question: ${riddle}\n`);
-      if (playerAnswer === correctAnswer) {
-        respondToCorrectAnswer(playerAnswer);
-      } else {
-        respondToWrongAnswer(playerAnswer, correctAnswer, playerName);
-        isPlayerWin = false;
-      }
-    });
-    return isPlayerWin;
-  };
-
-  const play = (riddlesAndAnswers, playerName) => {
-    const isPlayerWin = getGameResult(riddlesAndAnswers, playerName);
-
-    if (isPlayerWin) {
-      console.log(`Congratulations, ${playerName}!\n`);
-    } else {
-      console.log(`${playerName}, you lose!\n`);
-    }
-  };
-
-  const playerName = playerGreeting();
-  play(riddlesWithAnswers, playerName);
+const gameInterface = (gameTitle, gamePlay) => {
+  sayHello(`${gameTitle}`);
+  startGame(gameTitle, gamePlay);
 };
 
-export default playGame;
+export default gameInterface;

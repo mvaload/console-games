@@ -1,40 +1,32 @@
-import { digitsToString, intToDigits, ascNumSort, getRandom } from '../libs/math';
+import { cons } from 'hexlet-pairs';
+import gameInterface from '..';
+import { getRandom } from '../libs';
 
-const balanceDigits = (digits) => {
-  const sortedDigits = ascNumSort(digits);
-  const minDigit = sortedDigits[0];
-  const maxDigit = sortedDigits[sortedDigits.length - 1];
-  const middleDigits = sortedDigits.slice(1, sortedDigits.length - 1);
+const gameTitle = 'Balance the given number.';
 
-  if (maxDigit - minDigit <= 1) {
-    return sortedDigits;
+const getBalanceNumber = (number) => {
+  const integers = String(number).split('').sort((a, b) => a - b);
+  const length = integers.length - 1;
+  const first = Number(integers[0]);
+  const last = Number(integers[length]);
+  if (last - first <= 1) {
+    return integers.join('');
   }
+  integers[0] = first + 1;
+  integers[length] = last - 1;
+  const result = Number(integers.join(''));
 
-  return balanceDigits([minDigit + 1, maxDigit - 1, ...middleDigits]);
+  return getBalanceNumber(result);
 };
 
-const getAnswer = (int) => {
-  const digits = intToDigits(int);
-  const balancedDigits = balanceDigits(digits);
-  return digitsToString(balancedDigits);
+
+const balanceGame = () => {
+  const number = getRandom(11, 999);
+  const gameGoal = getBalanceNumber(number);
+  const gameQuestion = `${number}`;
+  return cons(gameQuestion, gameGoal);
 };
 
-const putRiddleWithAnswer = () => {
-  const min = 10;
-  const max = 99;
-  const int = getRandom(min, max);
-  const riddle = `${int}`;
-  const answer = getAnswer(int);
-  return [riddle, answer];
-};
+const playBalanceGame = () => gameInterface(gameTitle, balanceGame);
 
-const rule = 'Balance the given number.';
-
-const riddlesWithAnswers = Array.from({ length: 3 }, putRiddleWithAnswer);
-
-const brainBalanceGame = {
-  rule,
-  riddlesWithAnswers,
-};
-
-export default brainBalanceGame;
+export default playBalanceGame;

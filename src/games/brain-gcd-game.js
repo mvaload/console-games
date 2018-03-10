@@ -1,22 +1,25 @@
-import { gcd, getRandom } from '../libs/math';
+import { cons } from 'hexlet-pairs';
+import gameInterface from '..';
+import { getRandom } from '../libs';
 
-const putRiddleWithAnswer = () => {
-  const min = 1;
-  const max = 100;
-  const intA = getRandom(min, max);
-  const intB = getRandom(min, max);
-  const riddle = `${intA} ${intB}`;
-  const answer = `${gcd(intA, intB)}`;
-  return [riddle, answer];
+const gameTitle = 'Find the greatest common divisor of given numbers.';
+
+const expectedAnswer = (num1, num2) => {
+  if (!num2) {
+    return num1;
+  }
+  return expectedAnswer(num2, num1 % num2);
 };
 
-const rule = 'Find the greatest common divisor of given numbers.';
 
-const riddlesWithAnswers = Array.from({ length: 3 }, putRiddleWithAnswer);
-
-const brainGcdGame = {
-  rule,
-  riddlesWithAnswers,
+const gcdGame = () => {
+  const num1 = getRandom();
+  const num2 = getRandom();
+  const gameGoal = expectedAnswer(num1, num2);
+  const gameQuestion = `${num1} ${num2}`;
+  return cons(gameQuestion, gameGoal);
 };
 
-export default brainGcdGame;
+const playGcdGame = () => gameInterface(gameTitle, gcdGame);
+
+export default playGcdGame;

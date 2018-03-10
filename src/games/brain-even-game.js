@@ -1,21 +1,16 @@
-import { getRandom, isEven } from '../libs/math';
+import { cons } from 'hexlet-pairs';
+import gameInterface from '..';
+import { getRandom } from '../libs';
 
-const putRiddleWithAnswer = () => {
-  const minInt = 0;
-  const maxInt = 100;
-  const int = getRandom(minInt, maxInt);
-  const riddle = `${int}`;
-  const answer = isEven(int) ? 'yes' : 'no';
-  return [riddle, answer];
+const gameTitle = 'Answer "yes" if number even otherwise answer "no".';
+
+const evenGame = () => {
+  const number = getRandom();
+  const gameGoal = number % 2 === 0 ? 'yes' : 'no';
+  const gameQuestion = `${number}`;
+  return cons(gameQuestion, gameGoal);
 };
 
-const rule = 'Answer "yes" if number even otherwise answer "no".';
+const playEvenGame = () => gameInterface(gameTitle, evenGame);
 
-const riddlesWithAnswers = Array.from({ length: 3 }, putRiddleWithAnswer);
-
-const brainEvenGame = {
-  rule,
-  riddlesWithAnswers,
-};
-
-export default brainEvenGame;
+export default playEvenGame;
