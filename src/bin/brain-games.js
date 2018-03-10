@@ -1,4 +1,4 @@
 #!/usr/bin/env node
-import { getUserName } from '../libs';
+import { getUserName } from '../func';
 
 getUserName();
