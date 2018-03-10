@@ -1,6 +1,6 @@
 {
   "name": "mvbrain",
-  "version": "0.8.2",
+  "version": "1.8.2",
   "description": "Hexlet brain games project",
   "main": "dist/index.js",
   "bin": {
@@ -28,12 +28,12 @@
   "author": "Moiseenko Vladimir",
   "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
+    "babel-cli": "*",
+    "babel-core": "*",
     "babel-eslint": "^8.2.2",
     "babel-install": "2.1.0",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-stage-0": "^6.24.1",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
     "eslint": "^4.18.2",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.9.0"
