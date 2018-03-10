@@ -1,4 +1,4 @@
-import { sayHello, startGame } from './libs';
+import { sayHello, startGame } from './func';
 
 const gameInterface = (gameHeadline, gamePlay) => {
   sayHello(`${gameHeadline}`);
