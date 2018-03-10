@@ -12,7 +12,7 @@ const expectedAnswer = (num1, num2) => {
 };
 
 
-const gcdGame = () => {
+const getRightAnswer = () => {
   const num1 = getRandom();
   const num2 = getRandom();
   const correctAnswer = expectedAnswer(num1, num2);
@@ -20,6 +20,6 @@ const gcdGame = () => {
   return cons(question, correctAnswer);
 };
 
-const playGcdGame = () => gameInterface(gameHeadline, gcdGame);
+const playGcdGame = () => gameInterface(gameHeadline, getRightAnswer);
 
 export default playGcdGame;
