@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
 import { getRandom } from '../libs';
 
-const gameTitle = 'Find the greatest common divisor of given numbers.';
+const gameHeadline = 'Find the greatest common divisor of given numbers.';
 
 const expectedAnswer = (num1, num2) => {
   if (!num2) {
@@ -15,11 +15,11 @@ const expectedAnswer = (num1, num2) => {
 const gcdGame = () => {
   const num1 = getRandom();
   const num2 = getRandom();
-  const gameGoal = expectedAnswer(num1, num2);
-  const gameQuestion = `${num1} ${num2}`;
-  return cons(gameQuestion, gameGoal);
+  const correctAnswer = expectedAnswer(num1, num2);
+  const question = `${num1} ${num2}`;
+  return cons(question, correctAnswer);
 };
 
-const playGcdGame = () => gameInterface(gameTitle, gcdGame);
+const playGcdGame = () => gameInterface(gameHeadline, gcdGame);
 
 export default playGcdGame;

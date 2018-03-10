@@ -2,15 +2,17 @@ import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
 import { getRandom } from '../libs';
 
-const gameTitle = 'Answer "yes" if number even otherwise answer "no".';
+const gameHeadline = 'Answer "yes" if number even otherwise answer "no".';
 
 const evenGame = () => {
   const number = getRandom();
-  const gameGoal = number % 2 === 0 ? 'yes' : 'no';
-  const gameQuestion = `${number}`;
-  return cons(gameQuestion, gameGoal);
+  const correctAnswer = number % 2 === 0 ? 'yes' : 'no';
+  const question = `${number}`;
+  return cons(question, correctAnswer);
 };
 
-const playEvenGame = () => gameInterface(gameTitle, evenGame);
+const playEvenGame = () => gameInterface(gameHeadline, evenGame);
 
 export default playEvenGame;
+
+

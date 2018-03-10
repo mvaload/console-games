@@ -2,7 +2,7 @@ import { cons } from 'hexlet-pairs';
 import gameInterface from '..';
 import { getRandom } from '../libs';
 
-const gameTitle = 'Balance the given number.';
+const gameHeadline = 'Balance the given number.';
 
 const getBalanceNumber = (number) => {
   const integers = String(number).split('').sort((a, b) => a - b);
@@ -22,11 +22,11 @@ const getBalanceNumber = (number) => {
 
 const balanceGame = () => {
   const number = getRandom(11, 999);
-  const gameGoal = getBalanceNumber(number);
-  const gameQuestion = `${number}`;
-  return cons(gameQuestion, gameGoal);
+  const correctAnswer = getBalanceNumber(number);
+  const question = `${number}`;
+  return cons(question, correctAnswer);
 };
 
-const playBalanceGame = () => gameInterface(gameTitle, balanceGame);
+const playBalanceGame = () => gameInterface(gameHeadline, balanceGame);
 
 export default playBalanceGame;

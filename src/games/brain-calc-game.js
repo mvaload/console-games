@@ -17,7 +17,7 @@ const expectedAnswer = (num1, num2, sign) => {
   }
 };
 
-const gameTitle = 'What is the result of the expression?';
+const gameHeadline = 'What is the result of the expression?';
 
 const calcGame = () => {
   const pairOfNumbers = cons(getRandom(), getRandom());
@@ -25,12 +25,12 @@ const calcGame = () => {
   const num1 = car(car(expression));
   const num2 = cdr(car(expression));
   const sign = cdr(expression);
-  const gameGoal = expectedAnswer(num1, num2, sign);
-  const gameQuestion = `${num1} ${sign} ${num2}`;
-  return cons(gameQuestion, gameGoal);
+  const correctAnswer = expectedAnswer(num1, num2, sign);
+  const question = `${num1} ${sign} ${num2}`;
+  return cons(question, correctAnswer);
 };
 
 
-const playCalcGame = () => gameInterface(gameTitle, calcGame);
+const playCalcGame = () => gameInterface(gameHeadline, calcGame);
 
 export default playCalcGame;

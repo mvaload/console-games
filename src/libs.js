@@ -12,20 +12,20 @@ export const getRandomItem = arr => arr[Math.floor(Math.random() * arr.length)];
 export const getRandom = (min = 1, max = 100) =>
   Math.floor(Math.random() * ((max - min) + 1)) + min;
 
-export const startGame = (gameTitle, gamePlay) => {
+export const startGame = (gameHeadline, gamePlay) => {
   const userName = getUserName();
   let count = 0;
   while (count < 3) {
     const game = gamePlay(car, cdr);
-    const gameGoal = String(cdr(game));
-    const gameQuestion = car(game);
-    console.log(`Question: ${gameQuestion}`);
+    const correctAnswer = String(cdr(game));
+    const question = car(game);
+    console.log(`Question: ${question}`);
     const answer = readlineSync.question('Your answer: ');
-    if (checkAnswer(gameGoal, answer)) {
+    if (checkAnswer(correctAnswer, answer)) {
       count += 1;
       console.log('Correct!\n');
     } else {
-      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${gameGoal}'`);
+      console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'`);
       console.log(`Let's try again, ${userName}!`);
       return false;
     }

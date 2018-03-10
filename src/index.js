@@ -1,8 +1,10 @@
 import { sayHello, startGame } from './libs';
 
-const gameInterface = (gameTitle, gamePlay) => {
-  sayHello(`${gameTitle}`);
-  startGame(gameTitle, gamePlay);
+const gameInterface = (gameHeadline, gamePlay) => {
+  sayHello(`${gameHeadline}`);
+  startGame(gameHeadline, gamePlay);
 };
 
 export default gameInterface;
+
+
